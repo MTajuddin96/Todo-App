@@ -1,4 +1,4 @@
-$pink:rgb(255, 38, 103);
+$pink:rgb(255, 47, 137);
 $lgrey:rgb(209, 209, 209);
 @mixin flex($JC,$AI) {
     display: flex;
@@ -10,12 +10,17 @@ $lgrey:rgb(209, 209, 209);
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    font-family: 'Heebo', sans-serif;
 }
 body{
-    background: black;
+    background: #161616;
     color: white;
-    
+    height: 100%;
+    overflow: hidden;
 }
+
+// loading page//
+
 .headerContainer{
     @include flex(center,center );
     flex-direction: column; 
@@ -37,6 +42,9 @@ body{
         }
     }
 }
+
+//menu page//
+
 .menu{
     
     color: $pink;
@@ -68,11 +76,13 @@ body{
        } 
     }
 }
+
+//calendar page//
+
 .days{
     display: flex;
     justify-content: start;
     height: 25px;
-    font-family: sans-serif;
     font-size: 11px;
     margin-top: 5px;
     div{
@@ -89,11 +99,196 @@ body{
     width: 100%;
     div{
         border-bottom: 1px solid #222222;
-        font-family: sans-serif;
         font-size: 11px;
     }
 }
 .nav{
     height: 40px;
     background: #858585;
+}
+
+//todo page//
+
+.datePanelTodo{
+    position: fixed;
+    width: 100%;
+    padding: 20px;
+    background: #1f1f1f;
+    height: 13%;
+    z-index: 100;
+    overflow: hidden;
+    .dateTodo{
+        font-size: 150%;
+        color: #979797;
+    }
+    .noOfTasks{
+        font-size: 70%;
+    }
+}
+.progress{
+    position: fixed;
+    width: 100%;
+    top: 12%;
+    z-index: 100;
+    .progressBack{
+        height: 8px;
+        background: #3a3a3a;
+    }
+    .progressFront{
+        position: absolute;
+        top: 0px;
+        height: 8px;
+        background: linear-gradient(to right, rgb(255, 47, 137),rgb(255, 130, 183));
+        width: 80%;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+}
+.addTaskButton{
+    position: absolute;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    background: linear-gradient( rgb(255, 130, 183),rgb(255, 47, 137));
+    float: right;
+    top: 25px;
+    right: 20px;
+    img{
+        padding-left:9.5px;
+        padding-top: 9px; 
+    }
+}
+.taskHolder{
+    position: relative;
+    top: 13%;
+    margin-left: 8%;
+    border-left: 1px solid #3a3a3a;
+    height: 87%;
+    
+    .taskContainer{
+        height: 100%;
+        padding: 15px;
+
+    }
+    
+}
+//task types//
+//business task//
+
+.task-Business{
+    margin-top: 5px;
+    color: #e9e9e9;
+    min-height: 9%;
+    .taskTypeRound{
+        margin-top: 8px;
+        position: absolute;
+        left: -4.5px;
+        z-index: 100;
+        height: 9px;
+        width: 9px;
+        border-radius: 50%;
+        background:linear-gradient( rgb(255, 130, 183),rgb(255, 47, 137));
+    }
+    .taskTime{
+        font-size: 60%;
+        line-height: 1.5em;
+        padding-left: 2px;
+    }
+    .taskContent{
+        line-height: 1.4em;
+        
+    }
+    .taskType{
+        line-height: 1.2em;
+        font-size: 70%;
+        letter-spacing: 1px;
+        color: rgb(255, 89, 158);
+    }
+}
+.task-General{
+    margin-top: 10px;
+    color: #e9e9e9;
+    min-height: 9%;
+
+    .taskTypeRound{
+        margin-top: 8px;
+        position: absolute;
+        left: -4.5px;
+        z-index: 100;
+        height: 9px;
+        width: 9px;
+        border-radius: 50%;
+        background:linear-gradient( rgb(255, 147, 85),rgb(255, 189, 47));
+    }
+    .taskTime{
+        font-size: 60%;
+        line-height: 1.5em;
+        padding-left: 2px;
+    }
+    .taskContent{
+        line-height: 1.4em;
+    }
+    .taskType{
+        line-height: 1.2em;
+        font-size: 70%;
+        letter-spacing: 1px;
+        color: rgb(255, 211, 117);
+    }
+}
+.task-Entertainment{
+    margin-top: 10px;
+    min-height: 9%;
+    color: #e9e9e9;
+    .taskTypeRound{
+        margin-top: 8px;
+        position: absolute;
+        left: -4.5px;
+        z-index: 100;
+        height: 9px;
+        width: 9px;
+        border-radius: 50%;
+        background:linear-gradient( rgb(158, 255, 187),rgb(21, 248, 123));
+    }
+    .taskTime{
+        font-size: 60%;
+        line-height: 1.5em;
+        padding-left: 2px;
+    }
+    .taskContent{
+        line-height: 1.4em;
+    }
+    .taskType{
+        line-height: 1.2em;
+        font-size: 70%;
+        letter-spacing: 1px;
+        color: rgb(158, 255, 187);
+    }
+}.task-Important{
+    margin-top: 10px;
+    min-height: 9%;
+    color: #e9e9e9;
+    .taskTypeRound{
+        margin-top: 8px;
+        position: absolute;
+        left: -4.5px;
+        z-index: 100;
+        height: 9px;
+        width: 9px;
+        border-radius: 50%;
+        background:linear-gradient( rgb(255, 158, 158),rgb(248, 21, 21));
+    }
+    .taskTime{
+        font-size: 60%;
+        line-height: 1.5em;
+        padding-left: 2px;
+    }
+    .taskContent{
+        line-height: 1.4em;
+    }
+    .taskType{
+        line-height: 1.2em;
+        font-size: 70%;
+        letter-spacing: 1px;
+        color: rgb(255, 158, 158);
+    }
 }
