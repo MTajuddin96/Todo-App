@@ -11,13 +11,16 @@
     <div class="datePanelTodo">
         <div class="dateTodo">26 January</div>
         <div class="noOfTasks">8 OPEN TASKS</div>
-        <div class="addTaskButton">
+        <div class="addTaskButton" onclick="addTaskModal()" >
             <img src="images/add.svg" alt="">
         </div>
     </div>
     <div class="progress">
         <div class="progressBack"></div>
         <div class="progressFront"></div>
+    </div>
+    <div class="addTaskModal">
+
     </div>
     <div class="taskHolder">
         <div class="borderVertical"></div>
@@ -27,107 +30,153 @@
                 <div class="taskTypeRound"></div>
                 <div class="taskContent">Lorem ipsum dolor sit amet.</div>
                 <div class="taskType">Business</div>
-                <div class="completeButton"></div>
+                <div class="completeButton" onclick="taskComplete(this)">
+                    <div class="buttonBack"></div>
+                    <div class="buttonFront"></div>
+                </div>
             </div>
             <div class="task-Business">
                 <div class="taskTime">9:00 am</div>
                 <div class="taskTypeRound"></div>
                 <div class="taskContent">Lorem ipsum dolor sit amet.</div>
                 <div class="taskType">Business</div>
-                <div class="completeButton"></div>
+                <div class="completeButton" onclick="taskComplete(this)">
+                    <div class="buttonBack"></div>
+                    <div class="buttonFront"></div>
+                </div>
             </div>
             <div class="task-Business">
                 <div class="taskTime">9:00 am</div>
                 <div class="taskTypeRound"></div>
                 <div class="taskContent">Lorem ipsum dolor sit amet.</div>
                 <div class="taskType">Business</div>
-                <div class="completeButton"></div>
+                <div class="completeButton">
+                    <div class="buttonBack"></div>
+                    <div class="buttonFront"></div>
+                </div>
             </div>
             <div class="task-Business">
                 <div class="taskTime">9:00 am</div>
                 <div class="taskTypeRound"></div>
                 <div class="taskContent">Lorem ipsum dolor sit amet.</div>
                 <div class="taskType">Business</div>
-                <div class="completeButton"></div>
+                <div class="completeButton">
+                    <div class="buttonBack"></div>
+                    <div class="buttonFront"></div>
+                </div>
             </div>  
             <div class="task-Business">
                 <div class="taskTime">9:00 am</div>
                 <div class="taskTypeRound"></div>
                 <div class="taskContent">Lorem ipsum dolor sit amet.</div>
                 <div class="taskType">Business</div>
-                <div class="completeButton"></div>
+                <div class="completeButton">
+                    <div class="buttonBack"></div>
+                    <div class="buttonFront"></div>
+                </div>
             </div>
             <div class="task-General">
                     <div class="taskTime">9:00 am</div>
                     <div class="taskTypeRound"></div>
                     <div class="taskContent">Lorem ipsum, dolor sit amet consectetur adipisicing.</div>
                     <div class="taskType">General</div>
-                    <div class="completeButton"></div>
+                    <div class="completeButton">
+                        <div class="buttonBack"></div>
+                        <div class="buttonFront"></div>
+                    </div>
                 </div>
                 <div class="task-Entertainment">
                         <div class="taskTime">9:00 am</div>
                         <div class="taskTypeRound"></div>
                         <div class="taskContent">Lorem ipsum, dolor sit amet consectetur</div>
                         <div class="taskType">Entertainment</div>
-                        <div class="completeButton"></div>
+                        <div class="completeButton">
+                            <div class="buttonBack"></div>
+                            <div class="buttonFront"></div>
+                        </div>
                     </div>
                     <div class="task-Important">
                             <div class="taskTime">9:00 am</div>
                             <div class="taskTypeRound"></div>
                             <div class="taskContent">Lorem ipsum, dolor sit amet consectetur adipisicing.</div>
                             <div class="taskType">Important!</div>
-                            <div class="completeButton"></div>
+                            <div class="completeButton">
+                                <div class="buttonBack"></div>
+                                <div class="buttonFront"></div>
+                            </div>
                         </div>
                         <div class="task-General">
                             <div class="taskTime">9:00 am</div>
                             <div class="taskTypeRound"></div>
                             <div class="taskContent">Lorem ipsum, dolor sit amet consectetur adipisicing.</div>
                             <div class="taskType">General</div>
-                            <div class="completeButton"></div>
+                            <div class="completeButton">
+                                <div class="buttonBack"></div>
+                                <div class="buttonFront"></div>
+                            </div>
                         </div>
                         <div class="task-General">
                             <div class="taskTime">9:00 am</div>
                             <div class="taskTypeRound"></div>
                             <div class="taskContent">Lorem ipsum, dolor sit amet consectetur adipisicing.</div>
                             <div class="taskType">General</div>
-                            <div class="completeButton"></div>
+                            <div class="completeButton">
+                                <div class="buttonBack"></div>
+                                <div class="buttonFront"></div>
+                            </div>
                         </div>
                         <div class="task-Business">
                             <div class="taskTime">9:00 am</div>
                             <div class="taskTypeRound"></div>
                             <div class="taskContent">Lorem ipsum dolor sit amet.</div>
                             <div class="taskType">Business</div>
-                            <div class="completeButton"></div>
+                            <div class="completeButton">
+                                <div class="buttonBack"></div>
+                                <div class="buttonFront"></div>
+                            </div>
                         </div>
                         <div class="task-Business">
                             <div class="taskTime">9:00 am</div>
                             <div class="taskTypeRound"></div>
                             <div class="taskContent">Lorem ipsum dolor sit amet.</div>
                             <div class="taskType">Business</div>
-                            <div class="completeButton"></div>
+                            <div class="completeButton">
+                                <div class="buttonBack"></div>
+                                <div class="buttonFront"></div>
+                            </div>
                         </div>
                         <div class="task-Business">
                             <div class="taskTime">9:00 am</div>
                             <div class="taskTypeRound"></div>
                             <div class="taskContent">Lorem ipsum dolor sit amet.</div>
                             <div class="taskType">Business</div>
-                            <div class="completeButton"></div>
+                            <div class="completeButton">
+                                <div class="buttonBack"></div>
+                                <div class="buttonFront"></div>
+                            </div>
                         </div>
                         <div class="task-General">
                                 <div class="taskTime">9:00 am</div>
                                 <div class="taskTypeRound"></div>
                                 <div class="taskContent">Lorem ipsum, dolor sit amet consectetur adipisicing.</div>
                                 <div class="taskType">General</div>
-                                <div class="completeButton"></div>
+                                <div class="completeButton">
+                                    <div class="buttonBack"></div>
+                                    <div class="buttonFront"></div>
+                                </div>
                             </div>
                             <div class="task-General">
                                     <div class="taskTime">9:00 am</div>
                                     <div class="taskTypeRound"></div>
                                     <div class="taskContent">Lorem ipsum, dolor sit amet consectetur adipisicing.</div>
                                     <div class="taskType">General</div>
-                                    <div class="completeButton"></div>
+                                    <div class="completeButton">
+                                        <div class="buttonBack"></div>
+                                        <div class="buttonFront"></div>
+                                    </div>
                                 </div>
         </div>
     </div>
+    <script src="js/todoAddTask.js"></script>
 </body>
 </html>
