@@ -5,6 +5,32 @@ $lgrey:rgb(209, 209, 209);
     justify-content: $JC;
     align-items: $AI;
 }
+%taskPosition{
+    margin-top: 8px;
+    color: #e9e9e9;
+    min-height: 9%;
+    position: relative;
+}
+%taskTypeRound{
+    margin-top: 8px;
+    position: absolute;
+    left: -20px;
+    top: 10px;
+    z-index: 90;
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+}
+%taskTime{
+    font-size: 65%;
+        line-height: 1.5em;
+        padding-left: 2px;
+}
+%taskType{
+    line-height: 1.6em;
+    font-size: 70%;
+    letter-spacing: 1px;
+}
 *{
     margin:0;
     padding: 0;
@@ -112,14 +138,16 @@ body{
 .datePanelTodo{
     position: fixed;
     width: 100%;
+    top: 0;
     padding: 20px;
     background: #1f1f1f;
-    height: 13%;
+    height: 16%;
     z-index: 100;
     overflow: hidden;
     .dateTodo{
         font-size: 150%;
         color: #979797;
+        font-weight: 300;
     }
     .noOfTasks{
         font-size: 70%;
@@ -128,7 +156,7 @@ body{
 .progress{
     position: fixed;
     width: 100%;
-    top: 12%;
+    top: 16%;
     z-index: 100;
     .progressBack{
         height: 8px;
@@ -138,7 +166,7 @@ body{
         position: absolute;
         top: 0px;
         height: 8px;
-        background: linear-gradient(to right, rgb(255, 47, 137),rgb(255, 130, 183));
+        background: linear-gradient(to right, rgb(255, 47, 64),rgb(255, 105, 130));
         width: 80%;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
@@ -149,26 +177,36 @@ body{
     border-radius: 50%;
     height: 35px;
     width: 35px;
-    background: linear-gradient( rgb(255, 130, 183),rgb(255, 47, 137));
+    background: linear-gradient(rgb(255, 105, 130),rgb(255, 47, 64));
     float: right;
-    top: 25px;
+    top: 30px;
     right: 20px;
     img{
         padding-left:9.5px;
         padding-top: 9px; 
     }
 }
+
+
 .taskHolder{
     position: relative;
-    top: 13%;
-    margin-left: 8%;
-    border-left: 1px solid #3a3a3a;
-    height: 87%;
-    
+    top: 16%;
+    padding-left: 8%;
+    overflow: auto;
+    height: 84%;
+    padding-bottom: 10px;
+    .bordervertical{
+        background: linear-gradient(rgb(167, 167, 167),rgb(99, 99, 99));
+        width: .5px;
+        height: 100vh;
+        position: fixed;
+    }
     .taskContainer{
-        height: 100%;
+       
         padding: 15px;
-
+        border-left:.5px solid #999999;
+       
+       
     }
     
 }
@@ -176,119 +214,73 @@ body{
 //business task//
 
 .task-Business{
-    margin-top: 5px;
-    color: #e9e9e9;
-    min-height: 9%;
+    @extend %taskPosition;
     .taskTypeRound{
-        margin-top: 8px;
-        position: absolute;
-        left: -4.5px;
-        z-index: 100;
-        height: 9px;
-        width: 9px;
-        border-radius: 50%;
+        @extend %taskTypeRound;
         background:linear-gradient( rgb(255, 130, 183),rgb(255, 47, 137));
     }
     .taskTime{
-        font-size: 60%;
-        line-height: 1.5em;
-        padding-left: 2px;
+        @extend %taskTime;
     }
     .taskContent{
-        line-height: 1.4em;
+        font-weight: 300;
+        line-height: 1em;
         
     }
     .taskType{
-        line-height: 1.2em;
-        font-size: 70%;
-        letter-spacing: 1px;
+        @extend %taskType;
         color: rgb(255, 89, 158);
     }
 }
 .task-General{
-    margin-top: 10px;
-    color: #e9e9e9;
-    min-height: 9%;
-
+    @extend %taskPosition;
     .taskTypeRound{
-        margin-top: 8px;
-        position: absolute;
-        left: -4.5px;
-        z-index: 100;
-        height: 9px;
-        width: 9px;
-        border-radius: 50%;
+        @extend %taskTypeRound;
         background:linear-gradient( rgb(255, 147, 85),rgb(255, 189, 47));
     }
     .taskTime{
-        font-size: 60%;
-        line-height: 1.5em;
-        padding-left: 2px;
+        @extend %taskTime;
     }
     .taskContent{
-        line-height: 1.4em;
+        font-weight: 300;
+        line-height: 1em;
     }
     .taskType{
-        line-height: 1.2em;
-        font-size: 70%;
-        letter-spacing: 1px;
+        @extend %taskType;
         color: rgb(255, 211, 117);
     }
 }
 .task-Entertainment{
-    margin-top: 10px;
-    min-height: 9%;
-    color: #e9e9e9;
+    @extend %taskPosition;
     .taskTypeRound{
-        margin-top: 8px;
-        position: absolute;
-        left: -4.5px;
-        z-index: 100;
-        height: 9px;
-        width: 9px;
-        border-radius: 50%;
-        background:linear-gradient( rgb(158, 255, 187),rgb(21, 248, 123));
+        @extend %taskTypeRound;
+        background:linear-gradient( rgb(158, 216, 255),rgb(21, 184, 248));
     }
     .taskTime{
-        font-size: 60%;
-        line-height: 1.5em;
-        padding-left: 2px;
+        @extend %taskTime;
     }
     .taskContent{
-        line-height: 1.4em;
+        line-height: 1em;
     }
     .taskType{
-        line-height: 1.2em;
-        font-size: 70%;
-        letter-spacing: 1px;
-        color: rgb(158, 255, 187);
+        @extend %taskType;
+        color: rgb(158, 216, 255);
     }
 }.task-Important{
-    margin-top: 10px;
-    min-height: 9%;
-    color: #e9e9e9;
+    @extend %taskPosition;
     .taskTypeRound{
-        margin-top: 8px;
-        position: absolute;
-        left: -4.5px;
-        z-index: 100;
-        height: 9px;
-        width: 9px;
-        border-radius: 50%;
-        background:linear-gradient( rgb(255, 158, 158),rgb(248, 21, 21));
+        @extend %taskTypeRound;
+        background:linear-gradient( rgb(166, 255, 158),rgb(21, 248, 59));
     }
     .taskTime{
-        font-size: 60%;
-        line-height: 1.5em;
-        padding-left: 2px;
+        @extend %taskTime;
     }
     .taskContent{
-        line-height: 1.4em;
+        line-height: 1em;
     }
     .taskType{
-        line-height: 1.2em;
-        font-size: 70%;
-        letter-spacing: 1px;
-        color: rgb(255, 158, 158);
+        @extend %taskType;
+        color: rgb(177, 255, 158);
     }
 }
+
