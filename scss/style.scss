@@ -1,4 +1,4 @@
-$pink:rgb(255, 47, 137);
+$pink:rgb(255, 47, 64);
 $lgrey:rgb(209, 209, 209);
 @mixin flex($JC,$AI) {
     display: flex;
@@ -52,6 +52,26 @@ body{
     color: white;
     height: 100%;
     overflow: hidden;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #acacac; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(117, 117, 117); 
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
 }
 
 // loading page//
@@ -299,6 +319,7 @@ body{
     }
 }
 .overlay{
+    
     position: absolute;
     top: 0;
     left: 0;
@@ -306,19 +327,66 @@ body{
     width: 100%;
     background-color: rgba(0,0,0,0.5);
     z-index: 1000;
-    transform: scale(0)
+    transform: scale(0);
+    
 }
+
 .addTaskModal{
     position: fixed;
-    background: #525252;
-    height: 70%;
+    background: #2c2c2c;
+    height: 60%;
     width: 80%;
-    top: 20%;
-    left: 8%;
+    top: 25%;
+    left: 10%;
     z-index: 100;
     box-shadow: 1px 2px 5px black;
     transform:scale(0);
     border-radius: 5px; 
     z-index: 1000;
-}
+    display: flex;
+    padding: .5em;
+    .modalHeader{
+        text-align: center;
+        display: flex;
+        height: 43px;
+        width: 100%;
+        align-items: center;
+       justify-content:center;
+       padding-bottom: 10px;
+        #plusIcon{
+            margin-top:-3;
+            padding-right:5px; 
+        }
+        #crossIcon{
+           position: absolute;
+           top: 15;
+           right: 15px;
+        }
+        h2{  
+            font-weight: 500;
+            text-align: center;
+            font-size: 120%;
+        }
+    }
+    .leftContent{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1em;
+        font-weight: 400;
+        position: absolute;
+        color: #ff5656;
+        display: flex;  
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 100%;
+        padding: 8% 4%;
+        }
 
+    .modalText{
+        width: 100%;
+        top: 22%;
+        left: 4%;
+        color: $pink;
+        font-weight: 800;
+    }
+}
