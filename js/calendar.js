@@ -11,7 +11,6 @@ function addTaskModal(){
         overlay.style.transition="0.3s";
         overlay.style.transform="scale(1)" 
         checkModal=true;
-        console.log("if");
     }
 };
 
@@ -22,7 +21,6 @@ function addTaskModalClose(event){
     overlay.style.transition="0.3s";
     overlay.style.transform="scale(0)"
     checkModal=false;
-    console.log("function");
 }
 
 $(function () {
@@ -35,3 +33,6 @@ $(function () {
     })
 });
 
+$(function(){
+    $('#datetime12').combodate();  
+});

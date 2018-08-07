@@ -1,45 +1,71 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Calendar</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calendar</title>
 
-    <link rel="stylesheet" href="node_modules/fullcalendar/dist/fullcalendar.css">
+  <link rel="stylesheet" href="node_modules/fullcalendar/dist/fullcalendar.css">
+  <link href="https://fonts.googleapis.com/css?family=Heebo:300" rel="stylesheet">
+  <script src="node_modules/jquery/dist/jquery.js"></script>
+  <script src="node_modules/moment/moment.js"></script>
+  <script src="node_modules/combodate-1.0.7/combodate.js"></script>
+  <script src="node_modules/fullcalendar/dist/fullcalendar.js"></script>
 
-    <link href="https://fonts.googleapis.com/css?family=Heebo:300" rel="stylesheet">
-    <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="node_modules/moment/moment.js"></script>
-    <script src="node_modules/fullcalendar/dist/fullcalendar.js"></script>
-    
-    <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div id="calendar"></div>
-    <div class="overlay" onclick="addTaskModalClose(event)"></div>
+  <div id="calendar"></div>
+  <div class="overlay" onclick="addTaskModalClose(event)"></div>
 
-    <div class="addTaskModal">
-      <div class="modalHeader">
-        <img id="plusIcon" src="images/plus.svg" alt="">
-        <h2>Add Task</h2>
-        <img id="crossIcon" src="images/delete.svg" alt="" onclick="addTaskModalClose(event)">
-      </div>
-      
+  <div class="addTaskModal">
+    <div class="modalHeader">
+      <img id="plusIcon" src="images/plus.svg" alt="">
+      <h2>Add Task</h2>
+      <img id="crossIcon" src="images/delete.svg" alt="" onclick="addTaskModalClose(event)">
+    </div>
+    <div class="modalContentContainer">
       <div class="leftContent">
-        <span class="title">Category :</span>
-        <span class="title">Title :</span>
-        <span class="title">Category :</span>
-        <span class="title">Category :</span>
-        <span class="title">Days :</span>
+        <span class="title">Category : </span>
+        <span class="title">Title : </span>
+        <span class="title">Time : </span>
+        <span class="title">Repeat : </span>
+        <span class="title">Days : </span>
       </div>
       <div class="rightContent">
-
+          <select name="Category" id="Category">Select
+            <option value="business">Business</option>
+            <option value="general">General</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="important">Important</option>
+          </select>
+          <input type="text" name="jobTitle" id="jobTitle">
+          <select name="Category" id="Category">Select
+            <option value="business">Business</option>
+            <option value="general">General</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="important">Important</option>
+          </select>
+          <input type="text" id="datetime12" data-format="h:mm a" data-template="hh : mm a" name="datetime" value="8:30 pm">
+          
+          <div class="dayRepeatContainer">
+            <div class="dayCheckbox">S</div>
+            <div class="dayCheckbox">M</div>
+            <div class="dayCheckbox">T</div>
+            <div class="dayCheckbox">W</div>
+            <div class="dayCheckbox">T</div>
+            <div class="dayCheckbox">F</div>
+            <div class="dayCheckbox">S</div>
+         </div>
       </div>
+      
     </div>
+        <button class="addTaskModalButton">Add</button>
+  </div>
 
-    <script src="js/calendar.js"></script>
+  <script src="js/calendar.js"></script>
 </body>
 
 </html>

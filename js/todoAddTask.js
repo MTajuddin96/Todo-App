@@ -62,3 +62,6 @@ function taskComplete(val) {
     }
 }
 console.log(moment().format('DD') + " " + moment().format('MMMM'));
+$(function(){
+    $('#datetime12').combodate();  
+});

@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Todo</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/moment/moment.js"></script>
+    <script src="node_modules/combodate-1.0.7/combodate.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Heebo:300" rel="stylesheet">
 </head>
 <body>
@@ -21,9 +24,51 @@
     </div>
     <div class="overlay" onclick="addTaskModalClose(event)">
     </div>
+
     <div class="addTaskModal">
-        <h1>Add Task</h1>
-    </div>
+        <div class="modalHeader">
+          <img id="plusIcon" src="images/plus.svg" alt="">
+          <h2>Add Task</h2>
+          <img id="crossIcon" src="images/delete.svg" alt="" onclick="addTaskModalClose(event)">
+        </div>
+        <div class="modalContentContainer">
+          <div class="leftContent">
+            <span class="title">Category : </span>
+            <span class="title">Title : </span>
+            <span class="title">Time : </span>
+            <span class="title">Repeat : </span>
+            <span class="title">Days : </span>
+          </div>
+          <div class="rightContent">
+              <select name="Category" id="Category">Select
+                <option value="business">Business</option>
+                <option value="general">General</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="important">Important</option>
+              </select>
+              <input type="text" name="jobTitile" id="jobTitile">
+              <select name="Category" id="Category">Select
+                <option value="business">Business</option>
+                <option value="general">General</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="important">Important</option>
+              </select>
+              <input type="text" id="datetime12" data-format="h:mm a" data-template="hh : mm a" name="datetime" value="8:30 pm">
+              
+              <div class="dayRepeatContainer">
+                <div class="dayCheckbox">S</div>
+                <div class="dayCheckbox">M</div>
+                <div class="dayCheckbox">T</div>
+                <div class="dayCheckbox">W</div>
+                <div class="dayCheckbox">T</div>
+                <div class="dayCheckbox">F</div>
+                <div class="dayCheckbox">S</div>
+             </div>
+          </div>
+          
+        </div>
+            <button class="addTaskModalButton">Add</button>
+      </div>
     <div class="taskHolder">
         <div class="borderVertical"></div>
         <div class="taskContainer">

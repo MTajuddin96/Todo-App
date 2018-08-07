@@ -40,6 +40,8 @@ $lgrey:rgb(209, 209, 209);
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    outline: none;
+    border: none;
     font-family: 'Heebo', sans-serif;
 }
 button{
@@ -51,7 +53,7 @@ body{
     background: #161616;
     color: white;
     height: 100%;
-    overflow: hidden;
+    overflow: auto;
 }
 /* width */
 ::-webkit-scrollbar {
@@ -149,6 +151,21 @@ body{
     height: 80px;
     z-index: 100;
     overflow: hidden;
+    .addTaskButton{
+        position: absolute;
+        border-radius: 50%;
+        height: 35px;
+        width: 35px;
+        background: linear-gradient(rgb(255, 105, 130),rgb(255, 47, 64));
+        float: right;
+        top: 30px;
+        right: 20px;
+        cursor: pointer;
+        img{
+            padding-left:9.5px;
+            padding-top: 9px; 
+        }
+    }   
     #dateTodo{
         font-size: 150%;
         color: #979797;
@@ -156,6 +173,17 @@ body{
     }
     #noOfTasks{
         font-size: 70%;
+    }
+}
+.addTaskButton{
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    background: linear-gradient(rgb(255, 105, 130),rgb(255, 47, 64));
+    cursor: pointer;
+    img{
+        padding-left:9.5px;
+        padding-top: 9px; 
     }
 }
 .progress{
@@ -177,21 +205,7 @@ body{
         border-bottom-right-radius: 5px;
     }
 }
-.addTaskButton{
-    position: absolute;
-    border-radius: 50%;
-    height: 35px;
-    width: 35px;
-    background: linear-gradient(rgb(255, 105, 130),rgb(255, 47, 64));
-    float: right;
-    top: 30px;
-    right: 20px;
-    cursor: pointer;
-    img{
-        padding-left:9.5px;
-        padding-top: 9px; 
-    }
-}
+
 
 
 .taskHolder{
@@ -332,12 +346,13 @@ body{
 }
 
 .addTaskModal{
-    position: fixed;
-    background: #2c2c2c;
-    height: 60%;
-    width: 80%;
-    top: 25%;
-    left: 10%;
+    position: absolute;
+    background: #1b1b1b;
+    min-height: 400px;
+    max-height: 93%;
+    width: 93%;
+    top: 13%;
+    left: 3%;
     z-index: 100;
     box-shadow: 1px 2px 5px black;
     transform:scale(0);
@@ -345,6 +360,16 @@ body{
     z-index: 1000;
     display: flex;
     padding: .5em;
+    .addTaskModalButton{
+        position: absolute;
+        bottom: 5%;
+        left: 40%;
+        background:whitesmoke;
+        color: $pink;
+        width: 25%;
+        height: 9%;
+        border-radius: 5px;;
+    }
     .modalHeader{
         text-align: center;
         display: flex;
@@ -353,6 +378,7 @@ body{
         align-items: center;
        justify-content:center;
        padding-bottom: 10px;
+       margin-top: 8%;
         #plusIcon{
             margin-top:-3;
             padding-right:5px; 
@@ -361,6 +387,7 @@ body{
            position: absolute;
            top: 15;
            right: 15px;
+           z-index: 1000;
         }
         h2{  
             font-weight: 500;
@@ -368,20 +395,62 @@ body{
             font-size: 120%;
         }
     }
-    .leftContent{
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 1em;
-        font-weight: 400;
+    .modalContentContainer{
         position: absolute;
-        color: #ff5656;
-        display: flex;  
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        height: 100%;
-        padding: 8% 4%;
-        }
+        left: 0;
+        top: 10%;
+        height: 80%;
+        width: 100%;
 
+        .leftContent{
+            text-align: -webkit-right;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+            font-weight: 300;
+            color: $pink;
+            display: flex;  
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 100%;
+            max-width: 40%;
+            padding: 8% 0% 8% 1%; 
+            float: left;
+        }
+        .rightContent{
+            padding: 8% 4%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            right: 20;
+            max-width: 90%;
+            justify-content: space-evenly;
+            select{
+                background: #727272;
+                color: #dfdfdf;
+            }
+            input{
+               background: #353535;
+               color: #dfdfdf;
+            }
+            .dayRepeatContainer{
+                position: relative;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                .dayCheckbox{
+                    text-align: center;
+                    background: #353535;
+                    border: .5px solid #4b4a4a;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 3px;
+                    margin-right: 10px;
+                    font-size: 11px;
+                }
+            }
+        }
+    }
     .modalText{
         width: 100%;
         top: 22%;
