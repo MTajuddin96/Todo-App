@@ -8,6 +8,8 @@
 
   <link rel="stylesheet" href="node_modules/fullcalendar/dist/fullcalendar.css">
   <link href="https://fonts.googleapis.com/css?family=Heebo:300" rel="stylesheet">
+  <link rel="stylesheet" href="node_modules/fullcalendar-scheduler/dist/scheduler.css">
+  <script src="node_modules/fullcalendar-scheduler/dist/scheduler.js"></script>
   <script src="node_modules/jquery/dist/jquery.js"></script>
   <script src="node_modules/moment/moment.js"></script>
   <script src="node_modules/combodate-1.0.7/combodate.js"></script>
@@ -35,34 +37,36 @@
         <span class="title">Days : </span>
       </div>
       <div class="rightContent">
-          <select name="Category" id="Category">Select
+          <select name="Category" id="Category" >Select
             <option value="business">Business</option>
             <option value="general">General</option>
             <option value="entertainment">Entertainment</option>
             <option value="important">Important</option>
           </select>
+          
           <input type="text" name="jobTitle" id="jobTitle">
-          <select name="Category" id="Category">Select
-            <option value="business">Business</option>
-            <option value="general">General</option>
-            <option value="entertainment">Entertainment</option>
-            <option value="important">Important</option>
+          <input type="text" id="datetime12" data-format="h:mm A" data-template="hh : mm A" name="datetime" value="8:30 pm">
+
+          <select name="repeat" id="repeat" >Select
+            <option value="general">Weekly</option>
+            <option value="entertainment">Monthly</option>
+            <option value="important" selected>Yearly</option>
           </select>
-          <input type="text" id="datetime12" data-format="h:mm a" data-template="hh : mm a" name="datetime" value="8:30 pm">
+          
           
           <div class="dayRepeatContainer">
-            <div class="dayCheckbox">S</div>
-            <div class="dayCheckbox">M</div>
-            <div class="dayCheckbox">T</div>
-            <div class="dayCheckbox">W</div>
-            <div class="dayCheckbox">T</div>
-            <div class="dayCheckbox">F</div>
-            <div class="dayCheckbox">S</div>
+            <div class="dayCheckboxOff">S</div>
+            <div class="dayCheckboxOff">M</div>
+            <div class="dayCheckboxOff">T</div>
+            <div class="dayCheckboxOff">W</div>
+            <div class="dayCheckboxOff">T</div>
+            <div class="dayCheckboxOff">F</div>
+            <div class="dayCheckboxOff">S</div>
          </div>
       </div>
       
     </div>
-        <button class="addTaskModalButton">Add</button>
+        <button class="addTaskModalButton" onclick="addTaskDone(event)">Add</button>
   </div>
 
   <script src="js/calendar.js"></script>

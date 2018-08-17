@@ -29,10 +29,41 @@ $(function () {
         height: 'parent',
         dayClick: function () {
             addTaskModal();
-        }
+        },  events: [
+            {
+              title  : 'event1',
+              start  : '2018-08-08'
+            },
+            {
+              title  : 'event2',
+              start  : '2018-08-08'
+            },
+            {
+              title  : 'event3',
+              start  : '2018-08-09',
+          
+            }
+          ]
+    
     })
 });
 
 $(function(){
     $('#datetime12').combodate();  
 });
+
+
+    $(".dayCheckboxOff").click(function(){
+        if(($(this).hasClass("dayCheckboxOff"))===true){
+            $(this).toggleClass('dayCheckboxOff dayCheckboxOn');
+            console.log("Ok");
+        }
+        else{
+            $(this).toggleClass('dayCheckboxOn dayCheckboxOff');
+            console.log("not Ok");
+        }
+    });
+
+function addTaskDone(event){
+    addTaskModalClose(event);
+}
